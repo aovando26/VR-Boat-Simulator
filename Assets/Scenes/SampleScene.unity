@@ -323,7 +323,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 468431774}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Buoyancy Point 4
   m_TagString: Untagged
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
@@ -357,7 +357,7 @@ GameObject:
   - component: {fileID: 643063528}
   - component: {fileID: 643063527}
   - component: {fileID: 643063526}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -733,7 +733,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 888388508}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Centerboard Force
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
@@ -842,7 +842,7 @@ GameObject:
   - component: {fileID: 918160675}
   - component: {fileID: 918160674}
   - component: {fileID: 918160673}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Main Sail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -946,15 +946,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4134505312059479865, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.75
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4134505312059479865, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.974
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4134505312059479865, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.371
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4134505312059479865, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -988,6 +988,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: XR Interaction Setup
       objectReference: {fileID: 0}
+    - target: {fileID: 7696548424635294051, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.553
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1004,7 +1008,7 @@ GameObject:
   - component: {fileID: 1092660845}
   - component: {fileID: 1092660844}
   - component: {fileID: 1092660843}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Boat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1100,7 +1104,7 @@ Transform:
   m_GameObject: {fileID: 1092660842}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.001, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1122,7 +1126,7 @@ GameObject:
   - component: {fileID: 1101370074}
   - component: {fileID: 1101370073}
   - component: {fileID: 1101370072}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1225,7 +1229,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1402167498}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Rudder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1260,7 +1264,7 @@ GameObject:
   - component: {fileID: 1412531921}
   - component: {fileID: 1412531920}
   - component: {fileID: 1412531919}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Hull
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1369,7 +1373,7 @@ GameObject:
   - component: {fileID: 1472926919}
   - component: {fileID: 1472926918}
   - component: {fileID: 1472926917}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Centerboard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1472,7 +1476,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1649614176}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sail Force
   m_TagString: Untagged
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
@@ -1503,7 +1507,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1666815422}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Buoyancy Point 2
   m_TagString: Untagged
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
@@ -1534,7 +1538,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1787140351}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Buoyancy Point 1
   m_TagString: Untagged
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
@@ -1556,6 +1560,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1412531922}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1852891568
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1171441782051384501, guid: 52db07cd36bb15a499ec24c456b1b681, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1171441782051384501, guid: 52db07cd36bb15a499ec24c456b1b681, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1171441782051384501, guid: 52db07cd36bb15a499ec24c456b1b681, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1171441782051384501, guid: 52db07cd36bb15a499ec24c456b1b681, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1171441782051384501, guid: 52db07cd36bb15a499ec24c456b1b681, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1171441782051384501, guid: 52db07cd36bb15a499ec24c456b1b681, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1171441782051384501, guid: 52db07cd36bb15a499ec24c456b1b681, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1171441782051384501, guid: 52db07cd36bb15a499ec24c456b1b681, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1171441782051384501, guid: 52db07cd36bb15a499ec24c456b1b681, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1171441782051384501, guid: 52db07cd36bb15a499ec24c456b1b681, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5442582854464562666, guid: 52db07cd36bb15a499ec24c456b1b681, type: 3}
+      propertyPath: m_Name
+      value: Lever
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 52db07cd36bb15a499ec24c456b1b681, type: 3}
 --- !u!1 &1910920240
 GameObject:
   m_ObjectHideFlags: 0
@@ -1632,7 +1693,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1910920240}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: -1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2000, y: 0.01, z: 2000}
   m_ConstrainProportionsScale: 0
@@ -1695,7 +1756,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2021136834}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Rudder Force
   m_TagString: Untagged
   m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
@@ -1726,7 +1787,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2116224144}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Buoyancy Point 3
   m_TagString: Untagged
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
@@ -1760,3 +1821,4 @@ SceneRoots:
   - {fileID: 1092660845}
   - {fileID: 949198438}
   - {fileID: 443785927}
+  - {fileID: 1852891568}

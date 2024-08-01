@@ -520,8 +520,4 @@ public class BoatManager : MonoBehaviour
             }
         }
     }
-
-
-
-    
 }
