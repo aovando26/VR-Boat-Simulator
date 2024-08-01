@@ -22,14 +22,13 @@ public class LeverController : MonoBehaviour
     {
         if (isGrabbed)
         {
-            RotateRudder();
+            SpinRudder();
         }
     }
 
     private void OnGrab(SelectEnterEventArgs args)
     {
         isGrabbed = true;
-        lastLeverRotation = transform.localEulerAngles.x; // Capture the initial rotation
         Debug.Log("Lever grabbed");
     }
 
@@ -39,21 +38,16 @@ public class LeverController : MonoBehaviour
         Debug.Log("Lever released");
     }
 
-    private void RotateRudder()
+    private void SpinRudder()
     {
-        // Get current rotation of the lever
-        float currentLeverRotation = transform.localEulerAngles.x;
-
-        // Calculate the difference in rotation since the last frame
-        float rotationDelta = currentLeverRotation - lastLeverRotation;
-
-        // Apply the rotation to the cube (mockRudder)
-        mockRudder.transform.Rotate(Vector3.right, rotationDelta * speed);
-
-        // Update the last rotation value
-        lastLeverRotation = currentLeverRotation;
-
-        // Log rotation details for debugging
-        Debug.Log("Rotating cube with amount: " + rotationDelta);
+        if (mockRudder != null)
+        {
+            Vector3 spinRotate = new Vector3(0.3f, 0, 0); // Correctly initialize the vector
+            mockRudder.transform.Rotate(spinRotate * speed * Time.deltaTime); // Apply the rotation
+        }
+        else
+        {
+            Debug.LogError("mockRudder is not assigned.");
+        }
     }
 }
