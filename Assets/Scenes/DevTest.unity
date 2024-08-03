@@ -419,6 +419,21 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+--- !u!1 &1203797831 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1664271874441635582, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+  m_PrefabInstance: {fileID: 1203797830}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1203797832 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4469426807401443031, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+  m_PrefabInstance: {fileID: 1203797830}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1203797833 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 151727866883743569, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+  m_PrefabInstance: {fileID: 1203797830}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1309015433
 GameObject:
   m_ObjectHideFlags: 0
@@ -578,7 +593,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -679,6 +694,53 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &2038815130
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2038815132}
+  - component: {fileID: 2038815131}
+  m_Layer: 0
+  m_Name: UI Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2038815131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2038815130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddd42f9e4a2714c3a957d73e14f16d02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WindVectorUI: {fileID: 1203797833}
+  SailDirectionUI: {fileID: 1203797832}
+  ApparentWindUI: {fileID: 1203797831}
+--- !u!4 &2038815132
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2038815130}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 127.735466, y: 291.76617, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2654734860271964238
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -751,3 +813,4 @@ SceneRoots:
   - {fileID: 1309015437}
   - {fileID: 927313720}
   - {fileID: 1514894393}
+  - {fileID: 2038815132}

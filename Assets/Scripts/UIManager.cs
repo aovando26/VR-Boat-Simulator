@@ -9,7 +9,7 @@ public class UIManager : MonoBehaviour
     public GameObject WindVectorUI;
     public GameObject SailDirectionUI;
     public GameObject ApparentWindUI;
-    public GameObject player; 
+    //public GameObject player; 
     // Start is called before the first frame update
     void Start()
     {
@@ -27,12 +27,12 @@ public class UIManager : MonoBehaviour
     void UpdateWindVectorUI()
     {
         float AngleInRad = Mathf.Atan2(WindManager.instance.CurrentTrueWind.y, WindManager.instance.CurrentTrueWind.x);
-        Debug.Log(AngleInRad);
+        //Debug.Log(AngleInRad);
         WindVectorUI.transform.rotation = Quaternion.Euler(0, 0, AngleInRad * Mathf.Rad2Deg);
 
         // the y axis is being passed in the x coordinate then Euler Angles is applied with respect to the player transform
-        WindVectorUI.transform.Rotate(player.transform.eulerAngles.y, 0, 0);
-        //Debug.Log(WindVectorUI);
+        //WindVectorUI.transform.Rotate(player.transform.eulerAngles.y, 0, 0);
+        ////Debug.Log(WindVectorUI);
     }
 
     void UpdateSailDirectionUI()
@@ -40,16 +40,16 @@ public class UIManager : MonoBehaviour
         SailDirectionUI.transform.rotation = Quaternion.Euler(0, 0, -BoatManager.Player.Sail.transform.localRotation.eulerAngles.y + 90 - BoatManager.Player.transform.localRotation.eulerAngles.y);
 
         // rotates around x axis depending on y
-        SailDirectionUI.transform.Rotate(player.transform.eulerAngles.y, 0, 0);
+        //SailDirectionUI.transform.Rotate(player.transform.eulerAngles.y, 0, 0);
         //Debug.Log(SailDirectionUI);
     }
 
     void UpdateApparentWindUI()
     {
         float AngleInRad = Mathf.Atan2(BoatManager.Player.ApparentWind.y, BoatManager.Player.ApparentWind.x);
-        Debug.Log(AngleInRad);
+        //Debug.Log(AngleInRad);
         ApparentWindUI.transform.rotation = Quaternion.Euler(0, 0, AngleInRad * Mathf.Rad2Deg);
-        ApparentWindUI.transform.Rotate(player.transform.eulerAngles.y, 0, 0);
+        //ApparentWindUI.transform.Rotate(player.transform.eulerAngles.y, 0, 0);
         //Debug.Log(ApparentWindUI);
     }
 }
