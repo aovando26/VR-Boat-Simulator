@@ -70,7 +70,15 @@ public class BoatManager : MonoBehaviour
     public Vector3 ForceDebugOrigin = new Vector3(0, 5, 0);
     public float ForceDebugScale = 0.2f;
 
+    //[Header("Component References")]
+    //public Rigidbody rb;
 
+    [Header("Lever References")]
+    public Transform lever;
+    public float maxLeverAngle = 30f; // Maximum angle the lever can tilt
+
+    [Header("Boat Rotation")]
+    public float rotationSpeed = 1f; // Speed of rotation
 
 
 
@@ -122,6 +130,14 @@ public class BoatManager : MonoBehaviour
         Debug.DrawRay(transform.position + ForceDebugOrigin, CenterboardLiftForce + CenterboardDragForce, Color.red);
         Debug.DrawRay(Rudder.transform.position + ForceDebugOrigin, RudderLiftForce + RudderDragForce, new Color(1, 0.5f, 0.025f));
         Debug.DrawRay(transform.position + ForceDebugOrigin, SailLiftForce + SailDragForce + CenterboardLiftForce + CenterboardDragForce + RudderLiftForce + RudderDragForce, Color.yellow);
+        // Get the lever's current tilt angle
+        float leverAngle = Mathf.Clamp(lever.localEulerAngles.x, -maxLeverAngle, maxLeverAngle);
+
+        // Map the lever angle to a rotation factor
+        float rotationFactor = leverAngle / maxLeverAngle;
+
+        // Rotate the boat based on the lever's position
+        RotateBoat(rotationFactor);
     }
 
 
@@ -519,5 +535,35 @@ public class BoatManager : MonoBehaviour
                 Debug.DrawRay(BuoyancyForcePositions[i].transform.position, BuoyancyForce, Color.cyan);
             }
         }
+    }
+
+    public void RotateSailLeverControl(float rotation)
+    {
+        Vector3 currentRotation = Sail.transform.localEulerAngles;
+        float newYRotation = currentRotation.y + rotation;
+        newYRotation = Mathf.Clamp(newYRotation, -90, 90);
+        Sail.transform.localEulerAngles = new Vector3(currentRotation.x, newYRotation, currentRotation.z);
+    }
+
+    public void RotateRudderLeverControl(float rotation)
+    {
+        Vector3 currentRotation = Rudder.transform.localEulerAngles;
+        float newYRotation = currentRotation.y + rotation;
+        newYRotation = Mathf.Clamp(newYRotation, -90, 90);
+        Rudder.transform.localEulerAngles = new Vector3(currentRotation.x, newYRotation, currentRotation.z);
+    }
+
+    private void RotateBoat(float rotationFactor)
+    {
+        // Apply rotation to the boat's z-axis
+        float rotationAmount = rotationFactor * rotationSpeed * Time.deltaTime;
+        transform.Rotate(0, 0, rotationAmount);
+    }
+
+    public void RotateBoatLeverControl(float rotationFactor)
+    {
+        // Apply rotation to the boat's z-axis
+        float rotationAmount = rotationFactor * rotationSpeed * Time.deltaTime;
+        transform.Rotate(0, 0, rotationAmount);
     }
 }

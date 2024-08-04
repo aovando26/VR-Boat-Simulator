@@ -178,6 +178,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &422878563 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5087752010075885088, guid: 52db07cd36bb15a499ec24c456b1b681, type: 3}
+  m_PrefabInstance: {fileID: 1852891568}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &443785927
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -740,6 +745,9 @@ MonoBehaviour:
   isPlayer: 1
   ForceDebugOrigin: {x: 0, y: 3.1, z: 0}
   ForceDebugScale: 1
+  lever: {fileID: 422878563}
+  maxLeverAngle: 30
+  rotationSpeed: 1
 --- !u!54 &1092660844
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1290,18 +1298,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5406972455721087513, guid: 52db07cd36bb15a499ec24c456b1b681, type: 3}
-      propertyPath: Rudder
+    - target: {fileID: 2863870097589652708, guid: 52db07cd36bb15a499ec24c456b1b681, type: 3}
+      propertyPath: boatManager
       value: 
-      objectReference: {fileID: 1402167497}
-    - target: {fileID: 5406972455721087513, guid: 52db07cd36bb15a499ec24c456b1b681, type: 3}
-      propertyPath: mockRudder
-      value: 
-      objectReference: {fileID: 2021136833}
-    - target: {fileID: 5406972455721087513, guid: 52db07cd36bb15a499ec24c456b1b681, type: 3}
-      propertyPath: rotationSpeed
-      value: 2
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1092660843}
     - target: {fileID: 5442582854464562666, guid: 52db07cd36bb15a499ec24c456b1b681, type: 3}
       propertyPath: m_Name
       value: Lever
