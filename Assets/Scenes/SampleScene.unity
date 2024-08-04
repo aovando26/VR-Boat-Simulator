@@ -1256,7 +1256,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1171441782051384501, guid: 52db07cd36bb15a499ec24c456b1b681, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.75
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1171441782051384501, guid: 52db07cd36bb15a499ec24c456b1b681, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1289,6 +1289,18 @@ PrefabInstance:
     - target: {fileID: 1171441782051384501, guid: 52db07cd36bb15a499ec24c456b1b681, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5406972455721087513, guid: 52db07cd36bb15a499ec24c456b1b681, type: 3}
+      propertyPath: Rudder
+      value: 
+      objectReference: {fileID: 1402167497}
+    - target: {fileID: 5406972455721087513, guid: 52db07cd36bb15a499ec24c456b1b681, type: 3}
+      propertyPath: mockRudder
+      value: 
+      objectReference: {fileID: 2021136833}
+    - target: {fileID: 5406972455721087513, guid: 52db07cd36bb15a499ec24c456b1b681, type: 3}
+      propertyPath: rotationSpeed
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5442582854464562666, guid: 52db07cd36bb15a499ec24c456b1b681, type: 3}
       propertyPath: m_Name
@@ -1478,7 +1490,7 @@ GameObject:
   - component: {fileID: 2025653584}
   - component: {fileID: 2025653583}
   - component: {fileID: 2025653582}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}

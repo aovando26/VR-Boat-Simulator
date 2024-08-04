@@ -1,13 +1,15 @@
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.InputSystem;
 
 public class LeverController : MonoBehaviour
 {
-    public GameObject mockRudder; // The cube to be rotated
-    public float speed = 5.0f; // Speed of rotation
+    public GameObject Rudder; // The cube to be rotated
+    public float rotationSpeed = 0.5f; // Speed of rotation
     private XRGrabInteractable grabInteractable;
     private bool isGrabbed = false; // Flag to check if the lever is being grabbed
     private float lastLeverRotation = 0f; // Last rotation value of the lever
+    private InputActionProperty rotateAction;
 
     void Start()
     {
@@ -22,7 +24,7 @@ public class LeverController : MonoBehaviour
     {
         if (isGrabbed)
         {
-            SpinRudder();
+            RotateRudder();
         }
     }
 
@@ -38,16 +40,36 @@ public class LeverController : MonoBehaviour
         Debug.Log("Lever released");
     }
 
-    private void SpinRudder()
+    private void RotateRudder()
     {
-        if (mockRudder != null)
+        Vector3 currentRotation = Rudder.transform.localEulerAngles;
+        float newZRotation = currentRotation.z;
+
+        // Get VR controller input
+        float rotationInput = rotateAction.action.ReadValue<Vector2>().x; // Assuming left/right movement on the X axis
+
+        // Calculate potential new rotation
+        newZRotation += rotationInput * rotationSpeed;
+
+        // Adjust newZRotation to ensure it's within the -45 to 45 degree range
+        newZRotation = NormalizeAngle(newZRotation);
+        newZRotation = Mathf.Clamp(newZRotation, -45, 45);
+
+        // Apply the clamped rotation
+        Rudder.transform.localEulerAngles = new Vector3(currentRotation.x, currentRotation.y, newZRotation);
+    }
+
+    // Helper method to normalize angles
+    float NormalizeAngle(float angle)
+    {
+        while (angle > 180)
         {
-            Vector3 spinRotate = new Vector3(0.3f, 0, 0); // Correctly initialize the vector
-            mockRudder.transform.Rotate(spinRotate * speed * Time.deltaTime); // Apply the rotation
+            angle -= 360;
         }
-        else
+        while (angle < -180)
         {
-            Debug.LogError("mockRudder is not assigned.");
+            angle += 360;
         }
+        return angle;
     }
 }
