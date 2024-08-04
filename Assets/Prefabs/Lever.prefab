@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5436475643277907258}
   - component: {fileID: 805322301616126311}
   - component: {fileID: 1099329630958240750}
-  - component: {fileID: 5406972455721087513}
+  - component: {fileID: 2863870097589652708}
   m_Layer: 0
   m_Name: Frame
   m_TagString: Untagged
@@ -329,7 +329,7 @@ HingeJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &5406972455721087513
+--- !u!114 &2863870097589652708
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -341,8 +341,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ca5df5d5b6a0854cb566faf88fbb70c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mockRudder: {fileID: 0}
-  speed: 5
+  boatManager: {fileID: 0}
+  lever: {fileID: 805322301616126311}
+  leverRotationRange: 45
+  leverSensitivity: 1
 --- !u!1 &5442582854464562666
 GameObject:
   m_ObjectHideFlags: 0
