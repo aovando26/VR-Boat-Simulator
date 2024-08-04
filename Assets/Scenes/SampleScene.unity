@@ -1033,6 +1033,11 @@ Transform:
   - {fileID: 468431774}
   m_Father: {fileID: 1092660845}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1435084591 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9014170783809206332, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+  m_PrefabInstance: {fileID: 949198438}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1456268947 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4469426807401443031, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
@@ -1414,6 +1419,7 @@ MonoBehaviour:
   WindVectorUI: {fileID: 1897000204}
   SailDirectionUI: {fileID: 1456268947}
   ApparentWindUI: {fileID: 621960753}
+  playerMainCamera: {fileID: 1435084591}
 --- !u!4 &1972010234
 Transform:
   m_ObjectHideFlags: 0
