@@ -101,22 +101,22 @@ public class BoatManager : MonoBehaviour
         RudderAngleOfAttack = CalculateAngleOfAttack(Rudder.transform.forward, ApparentWaterVelocity, out RudderUnSignedAngleOfAttack);
         //Calculate Sail lift forcej54
         CalculateSailLiftForce();
-        Debug.DrawRay(transform.position + ForceDebugOrigin, SailLiftForce*ForceDebugScale, Color.white);
+        Debug.DrawRay(transform.position + ForceDebugOrigin, SailLiftForce * ForceDebugScale, Color.white);
         //Calculate Sail Drag force
         CalculateSailDragForce();
-        Debug.DrawRay(transform.position + ForceDebugOrigin, SailDragForce*ForceDebugScale, Color.grey);
+        Debug.DrawRay(transform.position + ForceDebugOrigin, SailDragForce * ForceDebugScale, Color.grey);
         //Calculate Centerboard force
         CalculateCenterboardLiftForce();
-        Debug.DrawRay(transform.position + ForceDebugOrigin, CenterboardLiftForce*ForceDebugScale, Color.white);
+        Debug.DrawRay(transform.position + ForceDebugOrigin, CenterboardLiftForce * ForceDebugScale, Color.white);
         //Calculate Centerboard force
         CalculateCenterboardDragForce();
-        Debug.DrawRay(transform.position + ForceDebugOrigin, CenterboardDragForce*ForceDebugScale, Color.grey);
+        Debug.DrawRay(transform.position + ForceDebugOrigin, CenterboardDragForce * ForceDebugScale, Color.grey);
         //Calculate Rudder force
         CalculateRudderLiftForce();
-        Debug.DrawRay(Rudder.transform.position + ForceDebugOrigin, CenterboardLiftForce*ForceDebugScale, Color.white);
+        Debug.DrawRay(Rudder.transform.position + ForceDebugOrigin, CenterboardLiftForce * ForceDebugScale, Color.white);
         //Calculate Rudder force
         CalculateRudderDragForce();
-        Debug.DrawRay(Rudder.transform.position + ForceDebugOrigin, CenterboardDragForce*ForceDebugScale, Color.grey);
+        Debug.DrawRay(Rudder.transform.position + ForceDebugOrigin, CenterboardDragForce * ForceDebugScale, Color.grey);
 
         Debug.DrawRay(transform.position + ForceDebugOrigin, SailLiftForce + SailDragForce, Color.green);
         Debug.DrawRay(transform.position + ForceDebugOrigin, CenterboardLiftForce + CenterboardDragForce, Color.red);
@@ -142,14 +142,14 @@ public class BoatManager : MonoBehaviour
         Vector3 FluidVelocity3D = new Vector3(FluidVelocity.x, 0, FluidVelocity.y);
         float DotProduct = Vector3.Dot(-FluidVelocity3D, ChordLine);
         float ProductOfMagnitudes = FluidVelocity3D.magnitude * ChordLine.magnitude;
-        UnSignedAngleOfAttack = Mathf.Acos(DotProduct/ProductOfMagnitudes) * Mathf.Rad2Deg;
+        UnSignedAngleOfAttack = Mathf.Acos(DotProduct / ProductOfMagnitudes) * Mathf.Rad2Deg;
 
         Vector3 CrossProduct = Vector3.Cross(-FluidVelocity3D, ChordLine);
         if (CrossProduct.y < 0)
         {
             return -UnSignedAngleOfAttack;
         }
-        else 
+        else
         {
             return UnSignedAngleOfAttack;
         }
@@ -157,66 +157,66 @@ public class BoatManager : MonoBehaviour
 
     void CalculateSailCL(float u_alpha)
     {
-        if (u_alpha <=0)
+        if (u_alpha <= 0)
         {
             SailCL = 0;
         }
         else if (u_alpha > 0 && u_alpha <= 26.677)
         {
-            SailCL = 0.000001408f*Mathf.Pow(u_alpha, 2) + 0.03747f*u_alpha;
+            SailCL = 0.000001408f * Mathf.Pow(u_alpha, 2) + 0.03747f * u_alpha;
         }
         else if (u_alpha > 26.677 && u_alpha <= 39.897)
         {
-            SailCL = -0.003787f*Mathf.Pow(u_alpha, 2) + 0.2726f*u_alpha - 3.5765f;
+            SailCL = -0.003787f * Mathf.Pow(u_alpha, 2) + 0.2726f * u_alpha - 3.5765f;
         }
         else if (u_alpha > 39.897 && u_alpha <= 77.517)
         {
-            SailCL = -0.01538f*u_alpha + 1.885f;
+            SailCL = -0.01538f * u_alpha + 1.885f;
         }
         else if (u_alpha > 77.517 && u_alpha <= 129.95)
         {
-            SailCL = - 0.02273f*u_alpha + 2.4548f;
+            SailCL = -0.02273f * u_alpha + 2.4548f;
         }
         else if (u_alpha > 129.95 && u_alpha <= 166.663)
         {
-            SailCL = 0.0002557f*Mathf.Pow(u_alpha, 2) - 0.09404f*u_alpha + 7.4035f;
+            SailCL = 0.0002557f * Mathf.Pow(u_alpha, 2) - 0.09404f * u_alpha + 7.4035f;
         }
         else if (u_alpha > 166.663 && u_alpha <= 180)
         {
-            SailCL = 0.0093746f*Mathf.Pow(u_alpha, 2) - 3.16235f*u_alpha + 265.48677f;
+            SailCL = 0.0093746f * Mathf.Pow(u_alpha, 2) - 3.16235f * u_alpha + 265.48677f;
         }
         else
         {
             SailCL = 0;
-        } 
+        }
     }
 
     void CalculateSailCD(float u_alpha)
     {
-        if (u_alpha <=0)
+        if (u_alpha <= 0)
         {
             SailCD = 0;
         }
         else if (u_alpha >= 0 && u_alpha <= 60.01145)
         {
-            SailCD = 0.0001458f*Mathf.Pow(u_alpha, 2) + 0.005417f*u_alpha + 0.05f;
+            SailCD = 0.0001458f * Mathf.Pow(u_alpha, 2) + 0.005417f * u_alpha + 0.05f;
         }
         else if (u_alpha > 60.01145 && u_alpha <= 159.392)
         {
-            SailCD = -0.0001255f*Mathf.Pow(u_alpha, 2) + 0.02924f*u_alpha - 0.4026f;
+            SailCD = -0.0001255f * Mathf.Pow(u_alpha, 2) + 0.02924f * u_alpha - 0.4026f;
         }
         else if (u_alpha > 159.492 && u_alpha < 180)
         {
-            SailCD = -0.0007273f*Mathf.Pow(u_alpha, 2) + 0.1945f*u_alpha - 11.4545f;
+            SailCD = -0.0007273f * Mathf.Pow(u_alpha, 2) + 0.1945f * u_alpha - 11.4545f;
         }
         else
         {
             SailCD = 0;
-        } 
+        }
     }
 
     void CalculateSailLiftForce()
-    {  
+    {
         CalculateSailCL(SailUnSignedAngleOfAttack);
         float LiftMagnitude = 0.5f * WindManager.instance.AirDensity * Mathf.Pow(ApparentWind.magnitude, 2) * SailArea * SailCL;
         Vector3 ApparentWind3D = new Vector3(ApparentWind.x, 0, ApparentWind.y);
@@ -257,27 +257,27 @@ public class BoatManager : MonoBehaviour
         }
         else if (u_alpha <= 15)
         {
-            CenterboardCL = 0.7f * Mathf.Sin(1/30f * Mathf.PI * u_alpha);
+            CenterboardCL = 0.7f * Mathf.Sin(1 / 30f * Mathf.PI * u_alpha);
         }
         else if (u_alpha > 15 && u_alpha <= 40)
         {
-            CenterboardCL = 0.1f * Mathf.Sin(1/25f * Mathf.PI * (u_alpha - 5/2f)) + 0.6f;
+            CenterboardCL = 0.1f * Mathf.Sin(1 / 25f * Mathf.PI * (u_alpha - 5 / 2f)) + 0.6f;
         }
         else if (u_alpha > 40 && u_alpha <= 90)
         {
-            CenterboardCL = -1/12500000f * Mathf.Pow((u_alpha - 40f), 4) + 0.5f;
+            CenterboardCL = -1 / 12500000f * Mathf.Pow((u_alpha - 40f), 4) + 0.5f;
         }
         else if (u_alpha > 90 && u_alpha <= 140)
         {
-            CenterboardCL = -0.7f * Mathf.Sin(1/30f * Mathf.PI * (180 - u_alpha));
+            CenterboardCL = -0.7f * Mathf.Sin(1 / 30f * Mathf.PI * (180 - u_alpha));
         }
         else if (u_alpha > 140 && u_alpha <= 165)
         {
-            CenterboardCL = -0.1f * Mathf.Sin(1/25f * Mathf.PI * ((180 - u_alpha) - 5/2f)) - 0.6f;
+            CenterboardCL = -0.1f * Mathf.Sin(1 / 25f * Mathf.PI * ((180 - u_alpha) - 5 / 2f)) - 0.6f;
         }
         else if (u_alpha > 165 && u_alpha <= 180)
         {
-            CenterboardCL = 1/12500000f * Mathf.Pow(((180 - u_alpha) - 40f), 4) - 0.5f;
+            CenterboardCL = 1 / 12500000f * Mathf.Pow(((180 - u_alpha) - 40f), 4) - 0.5f;
         }
         else
         {
@@ -286,7 +286,7 @@ public class BoatManager : MonoBehaviour
     }
 
     void CalculateCenterboardLiftForce()
-    {  
+    {
         CalculateCenterboardCL(CenterboardUnSignedAngleOfAttack);
         float LiftMagnitude = 0.5f * WindManager.instance.WaterDensity * Mathf.Pow(ApparentWaterVelocity.magnitude, 2) * CenterboardArea * CenterboardCL;
         Vector3 ApparentWater3D = new Vector3(ApparentWaterVelocity.x, 0, ApparentWaterVelocity.y);
@@ -347,27 +347,27 @@ public class BoatManager : MonoBehaviour
         }
         else if (u_alpha <= 15)
         {
-            RudderCL = 0.7f * Mathf.Sin(1/30f * Mathf.PI * u_alpha);
+            RudderCL = 0.7f * Mathf.Sin(1 / 30f * Mathf.PI * u_alpha);
         }
         else if (u_alpha > 15 && u_alpha <= 40)
         {
-            RudderCL = 0.1f * Mathf.Sin(1/25f * Mathf.PI * (u_alpha - 5/2f)) + 0.6f;
+            RudderCL = 0.1f * Mathf.Sin(1 / 25f * Mathf.PI * (u_alpha - 5 / 2f)) + 0.6f;
         }
         else if (u_alpha > 40 && u_alpha <= 90)
         {
-            RudderCL = -1/12500000f * Mathf.Pow((u_alpha - 40f), 4) + 0.5f;
+            RudderCL = -1 / 12500000f * Mathf.Pow((u_alpha - 40f), 4) + 0.5f;
         }
         else if (u_alpha > 90 && u_alpha <= 140)
         {
-            RudderCL = -0.7f * Mathf.Sin(1/30f * Mathf.PI * (180 - u_alpha));
+            RudderCL = -0.7f * Mathf.Sin(1 / 30f * Mathf.PI * (180 - u_alpha));
         }
         else if (u_alpha > 140 && u_alpha <= 165)
         {
-            RudderCL = -0.1f * Mathf.Sin(1/25f * Mathf.PI * ((180 - u_alpha) - 5/2f)) - 0.6f;
+            RudderCL = -0.1f * Mathf.Sin(1 / 25f * Mathf.PI * ((180 - u_alpha) - 5 / 2f)) - 0.6f;
         }
         else if (u_alpha > 165 && u_alpha <= 180)
         {
-            RudderCL = 1/12500000f * Mathf.Pow(((180 - u_alpha) - 40f), 4) - 0.5f;
+            RudderCL = 1 / 12500000f * Mathf.Pow(((180 - u_alpha) - 40f), 4) - 0.5f;
         }
         else
         {
@@ -376,7 +376,7 @@ public class BoatManager : MonoBehaviour
     }
 
     void CalculateRudderLiftForce()
-    {  
+    {
         CalculateRudderCL(RudderUnSignedAngleOfAttack);
         float LiftMagnitude = 0.5f * WindManager.instance.WaterDensity * Mathf.Pow(ApparentWaterVelocity.magnitude, 2) * RudderArea * RudderCL;
         Vector3 ApparentWater3D = new Vector3(ApparentWaterVelocity.x, 0, ApparentWaterVelocity.y);

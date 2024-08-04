@@ -23,11 +23,11 @@ public class WindManager : MonoBehaviour
     [Header("Timer")]
     public float WindTimer = 0f;
     public float CurrentTime = 0f;
-    public static WindManager instance; 
+    public static WindManager instance;
 
     [Header("Air Settings")]
-    public float AirDensity = 1.2257f; 
-    public float WaterDensity = 1027f; 
+    public float AirDensity = 1.2257f;
+    public float WaterDensity = 1027f;
 
     void Awake()
     {
@@ -35,7 +35,7 @@ public class WindManager : MonoBehaviour
         {
             instance = this;
         }
-        else 
+        else
         {
             Destroy(gameObject);
         }
@@ -44,7 +44,7 @@ public class WindManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (! WindOverride)
+        if (!WindOverride)
         {
             GenerateWindTimer();
             GenerateWind();
@@ -54,7 +54,7 @@ public class WindManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (! WindOverride)
+        if (!WindOverride)
         {
             UpdateTimer();
             UpdateCurrentWind();
@@ -71,7 +71,7 @@ public class WindManager : MonoBehaviour
         NewTrueWind.x = Random.Range(-1f, 1f);
         NewTrueWind.y = Random.Range(-1f, 0);
         NewTrueWind = NewTrueWind.normalized * NewWindMagnitude;
-    
+
     }
 
     void UpdateCurrentWind()
@@ -87,7 +87,7 @@ public class WindManager : MonoBehaviour
 
     void UpdateTimer()
     {
-        if(CurrentTime > 0)
+        if (CurrentTime > 0)
         {
             CurrentTime = CurrentTime - Time.deltaTime;
         }
