@@ -1290,6 +1290,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5406972455721087513, guid: 52db07cd36bb15a499ec24c456b1b681, type: 3}
+      propertyPath: Rudder
+      value: 
+      objectReference: {fileID: 1402167497}
+    - target: {fileID: 5406972455721087513, guid: 52db07cd36bb15a499ec24c456b1b681, type: 3}
+      propertyPath: mockRudder
+      value: 
+      objectReference: {fileID: 2021136833}
+    - target: {fileID: 5406972455721087513, guid: 52db07cd36bb15a499ec24c456b1b681, type: 3}
+      propertyPath: rotationSpeed
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5442582854464562666, guid: 52db07cd36bb15a499ec24c456b1b681, type: 3}
       propertyPath: m_Name
       value: Lever
